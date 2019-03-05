@@ -1,31 +1,48 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿<h1>Estudiante</h1>
+<br />
+
+@using (Html.BeginForm("Form", "Estudiante", FormMethod.Post))
+{
+    @Html.Label("Nombre", "Nombre: ")
+    @Html.TextBox("txtNombre", null, new { @class = "textbox", placeholder = "Ingrese su Nombre" })
+    <br />
+    @Html.Label("Apellido1", "Apellido: ")
+    @Html.TextBox("txtApellido1", null, new { @class = "textbox", placeholder = "Ingrese su primer Apellido" })
+    <br />
+    @Html.Label("Apellido2", "Apellido: ")
+    @Html.TextBox("txtApellido2", null, new { @class = "textbox", placeholder = "Ingrese su segundo Apellido" })
+    <br />
+    @Html.Label("Correo", "Correo: ")
+    @Html.TextBox("txtCorreo", null, new { @class = "textbox", placeholder = "Ingrese su Correo" })
+    <br />
+    @Html.Label("Name", "Genero")
+    <br />
+    @Html.Label("Genero1", "Hombre ")
+    @Html.RadioButton("Genero", "Hombre ", false);
+    @Html.Label("Genero2", " Mujer ")
+    @Html.RadioButton("Genero", "Mujer ", false);
+    <br />
+    @Html.Label("Pro", "Provincia ")
+    @Html.DropDownList("Provincia", new List<SelectListItem>{
+    new SelectListItem{Text="San Jose",Value="0"},
+    new SelectListItem{Text="Heredia",Value="1"},
+    new SelectListItem{Text="Alajuela",Value="2"},
+    new SelectListItem{Text="Cartago",Value="3"},
+    new SelectListItem{Text="Limon",Value="4"},
+    new SelectListItem{Text="Guanacaste",Value="5"},
+    new SelectListItem{Text="Puntarenas",Value="6"}
+})
+    <br />
+    @Html.Label("Direccion", "Direccion ")
+    @Html.TextArea("txtDireccion", null, new { @class = "textbox", placeholder = "Ingrese su direccion" })
+    <br />
+    @Html.Label("Trabaja", "Trabaja ")
+    @Html.CheckBox("txtTrabaja", false)
+    <br />
+    @Html.Label("Cursos", "Cantidad de Cursos: ")
+    @Html.TextBox("txtCursos", null, new { @class = "textbox", placeholder = "Cantidad de cursos", type = "number" })
+    <br />
+    <br />
+    <input type="submit" value="ENVIAR" name="ENVIAR" class="btn btn-primary" />
+    <input type="reset" value="LIMPIAR" name="LIMPIAR" class="btn btn-primary" />
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
